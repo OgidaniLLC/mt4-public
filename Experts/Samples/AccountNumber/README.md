@@ -1,6 +1,6 @@
 # [MT4]AccountNumber.mq4
 
-1. [口座認証をOnInit()でやると問題が起きる](https://twitter.com/FX_SysTradeEA/status/1686749049477795840)件に関連したソースです。
+1. [口座認証をOnInit()でやると問題が起きる](https://twitter.com/FX_SysTradeEA/status/1686640548051083264)件に関連したソースです。
 1. [AccountNumber()を使って口座認証すると重くなるか？](https://twitter.com/FX_SysTradeEA/status/1686749049477795840)で使用したソースです。
 
 ## ソース説明
