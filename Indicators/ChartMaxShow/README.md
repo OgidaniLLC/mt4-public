@@ -4,6 +4,7 @@
 
 ## 詳細
 
+1. インジケーターです。Indicatorsフォルダに格納してご利用ください。
 1. パラメーターの「Single click mode」をtrueにするとクリックで切替えします。
 1. パラメーターの「Single click mode」をfalseにするとダブルクリックで切替えします。
 1. パラメーターの「Double click interval」はダブルクリックを認識する間隔(ms)です。
