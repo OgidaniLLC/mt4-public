@@ -5,7 +5,7 @@
 //+------------------------------------------------------------------+
 #property copyright	"Copyright 2023, OgidaniLLC."
 #property link      "https://www.ogidani.com"
-#property version   "1.00"
+#property version   "1.01"
 #property strict
 #property indicator_chart_window
 #property indicator_buffers 0
@@ -22,15 +22,10 @@ sinput uint InpInterval = 250;    //Double click interval
 //+------------------------------------------------------------------+
 int OnInit()
 {
-	if (!TerminalInfoInteger(TERMINAL_DLLS_ALLOWED)) {
-		Alert("Please Allow the use of DLLs.");
+	if (!CanUseDlls()) {
 		return INIT_FAILED; 
 	}
-#ifdef __MQL5__
-	PlotIndexSetString(0, PLOT_LABEL, NULL);
-#else
-	SetIndexLabel(0, NULL);
-#endif
+	DeleteDataName();
 	return(INIT_SUCCEEDED);
 }
 //+------------------------------------------------------------------+
@@ -58,27 +53,66 @@ void OnChartEvent(const int id,
 					const string &sparam)
 {
 	if (CHARTEVENT_CLICK == id) {
-		bool bIsChange = false;
-		if (InpSClick) {
-			bIsChange = true;
-		} else {
-			static uint uiStartTick = 0;
-			if (InpInterval > GetTickCount() - uiStartTick) {
-				bIsChange = true;
-			}
-			uiStartTick = GetTickCount();
+		if (IsChangeChartShow()) {
+			ChangeChartShow(GetChartHandle());
 		}
-		if (bIsChange) {
+	}
+}
+///////////////////////////////////////////////////////////////////////////////
+// DLLの使用許可確認
+bool CanUseDlls()
+{
+	bool bResult = true;
+	if (!TerminalInfoInteger(TERMINAL_DLLS_ALLOWED)) {
+		Alert("Please Allow the use of DLLs.");
+		bResult = false;
+	}
+	return bResult;
+}
+///////////////////////////////////////////////////////////////////////////////
+// データウィンドウの項目削除
+void DeleteDataName()
+{
 #ifdef __MQL5__
-			int hWnd = (int)GetParent((int)ChartGetInteger(0, CHART_WINDOW_HANDLE));
+	PlotIndexSetString(0, PLOT_LABEL, NULL);
 #else
-			int hWnd = GetParent(WindowHandle(Symbol(), Period()));
+	SetIndexLabel(0, NULL);
 #endif
-			if (!IsZoomed(hWnd)) {
-				ShowWindow(hWnd, 3); 
-			} else {
-				ShowWindow(hWnd, 9);
-			}
+}
+///////////////////////////////////////////////////////////////////////////////
+// チャートの切替要否確認
+bool IsChangeChartShow()
+{
+	bool bIsChange = false;
+	if (InpSClick) {
+		bIsChange = true;
+	} else {
+		static uint uiStartTick = 0;
+		if (InpInterval > GetTickCount() - uiStartTick) {
+			bIsChange = true;
 		}
+		uiStartTick = GetTickCount();
+	}
+	return bIsChange;
+}
+///////////////////////////////////////////////////////////////////////////////
+// チャートのウィンドウハンドル取得
+int GetChartHandle()
+{
+#ifdef __MQL5__
+	int hWnd = (int)GetParent((long)ChartGetInteger(0, CHART_WINDOW_HANDLE));
+#else
+	int hWnd = GetParent(WindowHandle(Symbol(), Period()));
+#endif
+	return hWnd;
+}
+///////////////////////////////////////////////////////////////////////////////
+// チャートの表示切替
+void ChangeChartShow(int hWnd)
+{
+	if (!IsZoomed(hWnd)) {
+		ShowWindow(hWnd, 3); 
+	} else {
+		ShowWindow(hWnd, 9);
 	}
 }
