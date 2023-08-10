@@ -62,12 +62,12 @@ void OnChartEvent(const int id,
 		if (InpSClick) {
 			bIsChange = true;
 		} else {
-		static uint uiStartTick = 0;
-		if (InpInterval > GetTickCount() - uiStartTick) {
-			bIsChange = true;
+			static uint uiStartTick = 0;
+			if (InpInterval > GetTickCount() - uiStartTick) {
+				bIsChange = true;
+			}
+			uiStartTick = GetTickCount();
 		}
-		uiStartTick = GetTickCount();
-	}
 		if (bIsChange) {
 #ifdef __MQL5__
 			int hWnd = (int)GetParent((int)ChartGetInteger(0, CHART_WINDOW_HANDLE));
