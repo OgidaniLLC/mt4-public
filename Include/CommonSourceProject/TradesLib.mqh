@@ -1,3 +1,10 @@
+//+------------------------------------------------------------------+
+//|													   TradesLib.mqh |
+//|										 Copyright 2023, OgidaniLLC. |
+//|											 https://www.ogidani.com |
+//+------------------------------------------------------------------+
+//////////////////////////////////////////////////////////////////////
+//	MQL5
 #ifdef __MQL5__		//__MQL5__
 int TradesTotal(int& iNumPositions, int& iNumOrders)
 {
@@ -9,6 +16,8 @@ int TradesTotal()
 {
 	return PositionsTotal() + OrdersTotal();
 }
+//////////////////////////////////////////////////////////////////////
+//	MQL4
 #else				//__MQL4__
 int TradesTotal(int& iNumPositions, int& iNumOrders)
 {

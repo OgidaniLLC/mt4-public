@@ -3,12 +3,18 @@
 //|                                      Copyright 2023, OgidaniLLC. |
 //|                                          https://www.ogidani.com |
 //+------------------------------------------------------------------+
-#ifdef __MQL5__
+//////////////////////////////////////////////////////////////////////
+//	MQL5
+#ifdef __MQL5__		//__MQL5__
 #define IsDemo()			((bool)AccountInfoInteger(ACCOUNT_TRADE_MODE) == ACCOUNT_TRADE_MODE_DEMO)
 #define IsTesting()			((bool)MQLInfoInteger(MQL_TESTER))
-#else	//__MQL4__
+//////////////////////////////////////////////////////////////////////
+//	MQL4
+#else				//__MQL4__
 #endif
-///////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//	共通
+//////////////////////////////////////////////////////////////////////
 // ログ出力マクロ
 #define LOG(Message, Val)	(Error(__FUNCTION__ + "(" __FILE__ + ":" + IntegerToString(__LINE__) + ") : " + Message, Val, 0))
 #define INF(Message, Val)	(Error(__FUNCTION__ + "(" __FILE__ + ":"  + IntegerToString(__LINE__) + ") : " + Message, Val, 1))
