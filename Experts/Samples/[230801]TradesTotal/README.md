@@ -22,4 +22,6 @@ __[Return]__
 ## include
 [TradesLib.mqh](../../../Include/CommonSourceProject/TradesLib.mqh)
 ## History
+Ver1.01 2023/08/14　エラー処理追加
+ 
 Ver1.00 2023/08/14　新規作成
