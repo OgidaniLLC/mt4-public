@@ -28,6 +28,10 @@ void ProcPositions(int iNumTrades, int iNumPositions)
 		if (!PositionSelect(iIndex, SELECT_BY_POS, MODE_TRADES)) {
 			continue;
 		}
+		if (OP_SELL < PositionType()) {
+			//オーダーを除外する
+			continue;
+		}
 		LOG("Position Ticket", PotitionTicket());
 	}
 }

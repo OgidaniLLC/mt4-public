@@ -29,6 +29,21 @@ long PotitionTicket()
 {
 	return (long)PositionGetInteger(POSITION_TICKET);
 }
+///////////////////////////////////////////////////////////////////////////////
+// ポジションのタイプ取得
+int PositionType()
+{
+   long lOrdrType = PositionGetInteger(POSITION_TYPE);
+	int OrderTypeTbl[8] = {
+		OP_BUY,
+		OP_SELL,
+		OP_BUYLIMIT,
+		OP_SELLLIMIT,
+		OP_BUYSTOP,
+		OP_SELLSTOP
+	};
+	return OrderTypeTbl[lOrdrType];
+}
 //////////////////////////////////////////////////////////////////////
 //	MQL4
 #else				//__MQL4__
