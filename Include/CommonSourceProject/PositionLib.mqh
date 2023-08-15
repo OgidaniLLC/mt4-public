@@ -46,4 +46,10 @@ long PotitionTicket()
 {
 	return (long)OrderTicket();
 }
+///////////////////////////////////////////////////////////////////////////////
+// ポジションのタイプ取得
+int PositionType()
+{
+	return OrderType();
+}
 #endif

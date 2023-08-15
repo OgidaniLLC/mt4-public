@@ -45,18 +45,4 @@ long OrderTicket()
 //////////////////////////////////////////////////////////////////////
 //	MQL4
 #else				//__MQL4__
-///////////////////////////////////////////////////////////////////////////////
-// 約定済ポジション(未決済)を選択する
-bool PositionSelect(ulong ulIndex, int iSelect, int iPool = MODE_TRADES)
-{
-	bool bResult = false;
-	bResult = OrderSelect((int)ulIndex, iSelect, iPool);
-	return bResult;
-}
-///////////////////////////////////////////////////////////////////////////////
-// ポジションのチケット番号取得
-long PotitionTicket()
-{
-	return (long)OrderTicket();
-}
 #endif
