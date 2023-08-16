@@ -10,18 +10,16 @@
 ## インタフェース
 __*int TradesTotal(int& iNumPositions, int& iNumOrders)*__
  
-__[Param]__
- 
-*iNumPositons* ：ポジション数 [o]
- 
+__[Param]__  
+*iNumPositons* ：ポジション数 [o]  
 *iNumOrders* ：オーダー数 [o]
  
-__[Return]__
- 
+__[Return]__   
 ポジションとオーダーの合計数
+
 ## include
-[TradesLib.mqh](../../../Include/CommonSourceProject/TradesLib.mqh)
+[TradeLib.mqh](../../../Include/CommonSourceProject/TradeLib.mqh)
+
 ## History
-Ver1.01 2023/08/14　エラー処理追加
- 
+Ver1.01 2023/08/14　エラー処理追加  
 Ver1.00 2023/08/14　新規作成
