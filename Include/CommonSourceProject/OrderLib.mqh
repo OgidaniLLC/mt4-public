@@ -38,6 +38,8 @@ int OrderType()
 	};
 	return OrderTypeTbl[lOrdrType];
 }
+///////////////////////////////////////////////////////////////////////////////
+// オーダーチケット取得
 long OrderTicket()
 {
 	return OrderGetInteger(ORDER_TICKET);
