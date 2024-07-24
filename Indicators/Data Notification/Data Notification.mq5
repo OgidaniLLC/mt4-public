@@ -5,7 +5,7 @@
 //+------------------------------------------------------------------+
 #property copyright "Copyright 2024, OgidaniLLC."
 #property link      "https://www.ogidani.com"
-#property version   "1.00"
+#property version   "1.01"
 #property strict
 #property indicator_chart_window
 #property indicator_plots   0
@@ -90,7 +90,7 @@ public:
 		if (0 == m_dBalance) return;
 		double diffValue = m_dBalance - dBalance;
 		double dPersent = MathAbs(diffValue) * 100 / m_dBalance;
-		if (InpPersent <= dPersent || InpDiffPlus < diffValue || diffValue < -InpDiffMinus) NotifyAlert(KD_CREDIT, dBalance);
+		if (InpPersent <= dPersent || InpDiffPlus < diffValue || diffValue < -InpDiffMinus) NotifyAlert(KD_BALANCE, dBalance);
 		m_dBalance = dBalance;
 	}
 	void CompareMinLots(double dMinLots) { if (dMinLots != m_dMinLots) NotifyAlert(KD_MINLOTS, dMinLots); }
