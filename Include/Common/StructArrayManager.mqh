@@ -25,16 +25,16 @@ public:
 		array[m_iSize++] = item;
 	}
 	// 要素の取得
-	T Get(int index) const {
-		if (index >= 0 && index < m_iSize) return array[index];
+	T Get(int iTaget) const {
+		if (iTaget >= 0 && iTaget < m_iSize) return array[iTaget];
 		// 範囲外アクセス時のエラーハンドリング（ここではデフォルト構造体を返す）
 		return T();
 	}
 	// 要素の削除
-	void Remove(int index) {
-		if (index >= 0 && index < m_iSize) {
-			for (int i = index; i < m_iSize - 1; i++) {
-				array[i] = array[i + 1];
+	void Remove(int iTaget) {
+		if (iTaget >= 0 && iTaget < m_iSize) {
+			for (int iIndex = iTaget; iIndex < m_iSize - 1; iIndex++) {
+				array[iIndex] = array[iIndex + 1];
 			}
 			m_iSize--;
 		}
