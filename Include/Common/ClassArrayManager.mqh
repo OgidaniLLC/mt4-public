@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
 //|											ClassArrayManager.mqh	 |
-//| Template Class for Struct Array Management						 |
+//| Template Class for Class Array Management						 |
 //|										 Copyright 2024, OgidaniLLC. |
 //|											 https://www.ogidani.com |
 //+------------------------------------------------------------------+
