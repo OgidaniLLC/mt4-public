@@ -1,6 +1,6 @@
 # [MT4/MT5]CurrentStatus
 
-チャート上のマウス位置に、垂直線を引きそのローソク足のHLOCおよびShiftを表示します
+チャート上のマウス位置に、垂直線を引きそのローソク足のHLOCおよびShiftを表示します  
 MT4/MT5で利用できるインジケーターです
 
 https://github.com/user-attachments/assets/fb27d3ba-674a-42bb-864b-854a2ac33ca3
