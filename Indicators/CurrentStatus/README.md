@@ -15,4 +15,5 @@ https://github.com/user-attachments/assets/fb27d3ba-674a-42bb-864b-854a2ac33ca3
 1. 情報表示と垂直線は指定時間秒後に消えます
 
 ## History
+Ver1.01 2025/04/03　不要ログ削除  
 Ver1.00 2025/04/01　新規作成
